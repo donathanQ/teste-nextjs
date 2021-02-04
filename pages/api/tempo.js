@@ -5,7 +5,7 @@ async function tempo(request,response){
     const dogRespondeJson = await dogResponse.json();
     const imgDog = dogRespondeJson.message;
 
-    response.setHeader('Cach-Control','s-maxage=10', 'stale-while-revalidade');
+    response.setHeader('Cache-Control','s-maxage=10', 'stale-while-revalidade');
 
     response.json({
         date: dynamicDate.toGMTString(),
