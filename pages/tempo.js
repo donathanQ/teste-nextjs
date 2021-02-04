@@ -14,13 +14,15 @@ function Tempo(props) {
 
 
 export function getStaticProps(){
+    //passa somente 1 vez no deploy
     const staticDate = new Date();
     const staticDateString = staticDate.toGMTString();
 
     return{
         props:{
             staticDateString
-        }
+        },
+        revalidate:1
     }
 
 }
